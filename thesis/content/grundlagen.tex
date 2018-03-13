@@ -1,0 +1,46 @@
+\chapter{Grundlagen}
+
+\section{Kapitel1}
+
+Dieser Text ist von Nobody ~\cite{Nobody06}
+Dieser Text ist auch von Nobody \cite{Nobody16}
+\subsection{Unterkapitel}
+
+
+\begin{figure}[htb!]
+	\caption{Beispiel Bild}
+	\includegraphics[width=0.9\textwidth]{content/pictures/hfu.jpg}
+	\label{pic:label}
+\end{figure}
+
+
+% longtable ist eine schöne Form der Tabelle
+% Über die Kopfzeile "\begin{longtable}[l]{|p{3,0cm}|p{10,5cm}|}" kann man die Anzahl der
+% Spalten bestimmten. Man fügt einfach "|" ein und schreibt dazwischen, wie breit die Spalte sein % soll. Die Breite gibt an typischerweise über "p{X.Ycm}" an, wobei X und Y ganze Zahlen sind.
+% Es ist auch möglich zwei senkrechte Striche innerhalb der Tabelle zu machen, indem mann "||" setzt. Oder zwei vertikale Striche, indem man zwei Mal "\hline" setzt.
+% Innerhalb der Tabelle macht ein "\hline", um eine neue Zeile einzuleiten - Wichtig ist, dass
+% vor dem \hline ein Zeilenumbruch in Form von "\\" kommt, da ansonsten ein Fehler ausgegeben wird.
+\begin{footnotesize}
+	\begin{longtable}[l]{|p{3,0cm}|p{10,5cm}|}
+		\caption{Beispiel schöne Tabelle}
+		\label{tab:label}
+		\\
+		\hline
+		Spalte1/Zeile1	& 
+		\begin{itemize}
+			\item Itemize in Tabelle
+			\item Spalte2
+		\end{itemize} 
+		\\ 
+		\hline
+		Spalte1/Zeile2	&   
+		Spalte2/Zeile2
+		\\
+		\hline
+		Spalte1/Zeile3	&    
+		Spalte2/Zeile3
+		\\
+		\hline
+	\end{longtable}
+\end{footnotesize}
+

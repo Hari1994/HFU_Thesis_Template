@@ -1,0 +1,84 @@
+\documentclass[
+	12pt,
+	a4paper,
+	bibtotoc,
+	cleardoubleempty, 
+	idxtotoc,
+	ngerman,
+	openright
+	final,
+	listof=nochaptergap,
+	]{scrbook}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{pdfpages}
+
+\include{preamble}
+
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+
+% Titelblatt
+\include{content/title}
+\cleardoubleemptypage
+
+\frontmatter
+
+
+% Abstract
+\include{content/abstract}
+\cleardoubleemptypage
+
+% Inhaltsverzeichnis
+\tableofcontents
+\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\cleardoubleemptypage
+
+% Abbildungsverzeichnis einbinden und ins Inhaltsverzeichnis
+% WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
+% korrekt\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename} 
+\listoffigures
+\cleardoubleemptypage
+
+% Tabellenverzeichnis einbinden und ins Inhaltsverzeichnis
+% WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
+% korrekt\phantomsection
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\cleardoubleemptypage
+
+% Abkürzungsverzeichnis
+\include{content/abbreviations}
+\nocite{*}
+\mainmatter
+
+\include{content/einleitung}
+\include{content/grundlagen}
+\include{content/bewertung}
+\include{content/ausblick}
+\include{content/fazit}
+
+% Schlagwortverzeichnis (Index)
+%\printindex
+
+% Literaturverzeichnis
+\singlespacing
+\bibliographystyle{alphadin}
+\bibliography{bibtex}
+
+% Eidesstattliche Erklärung
+\include{content/affirmation}
+
+\appendix
+%\includepdf[pages=-]{content/appendix/Monatsbericht_September}
+%\includepdf[pages=-]{content/appendix/Monatsbericht_Oktober}
+%\includepdf[pages=-]{content/appendix/Monatsbericht_November}
+%\includepdf[pages=-]{content/appendix/Monatsbericht_Dezember}
+%\includepdf[pages=-]{content/appendix/Monatsbericht_Januar}
+%\includepdf[pages=-]{content/appendix/Monatsbericht_Februar}
+\end{document}      
