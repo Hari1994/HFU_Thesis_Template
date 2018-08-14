@@ -10,6 +10,8 @@
 	listof=nochaptergap,
 	]{scrbook}
 
+\usepackage{cmap}
+\usepackage[toc,page]{appendix}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{longtable}
@@ -22,14 +24,14 @@
 \setcounter{secnumdepth}{3}
 
 % Titelblatt
-\include{content/title}
+\include{content/framework/title}
 \cleardoubleemptypage
 
 \frontmatter
 
 
 % Abstract
-\include{content/abstract}
+\include{content/framework/abstract}
 \cleardoubleemptypage
 
 % Inhaltsverzeichnis
@@ -53,7 +55,7 @@
 \cleardoubleemptypage
 
 % Abkürzungsverzeichnis
-\include{content/abbreviations}
+\include{content/framework/abbreviations}
 \nocite{*}
 \mainmatter
 
@@ -72,13 +74,21 @@
 \bibliography{bibtex}
 
 % Eidesstattliche Erklärung
-\include{content/affirmation}
+\include{content/framework/affirmation}
 
-\appendix
-%\includepdf[pages=-]{content/appendix/Monatsbericht_September}
-%\includepdf[pages=-]{content/appendix/Monatsbericht_Oktober}
-%\includepdf[pages=-]{content/appendix/Monatsbericht_November}
-%\includepdf[pages=-]{content/appendix/Monatsbericht_Dezember}
-%\includepdf[pages=-]{content/appendix/Monatsbericht_Januar}
-%\includepdf[pages=-]{content/appendix/Monatsbericht_Februar}
+\begin{appendices}
+	\chapter{Anhang}
+	%Nun folgen die Monatsberichte
+	%\newpage
+	%\appendixsection{Code foo}{../code/code_01.pdf}
+	%\appendixsection{Code bar}{../code/code_02.pdf}
+	
+	%\includepdf[pages=-]{content/appendix/Monatsbericht_September}
+	%\includepdf[pages=-]{content/appendix/Monatsbericht_Oktober}
+	%\includepdf[pages=-]{content/appendix/Monatsbericht_November}
+	%\includepdf[pages=-]{content/appendix/Monatsbericht_Dezember}
+	%\includepdf[pages=-]{content/appendix/Monatsbericht_Januar}
+	%\includepdf[pages=-]{content/appendix/Monatsbericht_Februar}
+\end{appendices}
+
 \end{document}      
